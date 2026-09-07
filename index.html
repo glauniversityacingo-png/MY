@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Babuu 💕</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== BACKGROUND MUSIC ===== -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg" />
+    <!-- Fallback romantic track -->
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- ===== FLOATING MUSIC BUTTON ===== -->
+  <button class="music-btn" id="musicBtn" onclick="toggleMusic()" title="Toggle Music">
+    <span class="music-icon" id="musicIcon">🎵</span>
+    <span class="music-waves" id="musicWaves">
+      <span></span><span></span><span></span>
+    </span>
+  </button>
+
+  <!-- ===== STAR CANVAS ===== -->
+  <canvas id="starCanvas"></canvas>
+
+  <!-- ===== MOON ===== -->
+  <div class="moon-wrapper">
+    <div class="moon">
+      <div class="moon-glow"></div>
+      <div class="moon-crater c1"></div>
+      <div class="moon-crater c2"></div>
+      <div class="moon-crater c3"></div>
+    </div>
+    <div class="moon-ring"></div>
+  </div>
+
+  <!-- ===== FLOATING HEARTS ===== -->
+  <div class="hearts-bg" id="heartsBg"></div>
+
+  <!-- ==================== PASSWORD SCREEN ==================== -->
+  <div id="passwordScreen" class="screen active">
+    <div class="lock-card">
+      <div class="sorry-gif-row">
+        <img src="https://media.giphy.com/media/26BRuo6sLetdllPAQ/giphy.gif" alt="sorry gif" class="sorry-gif" />
+        <img src="https://media.giphy.com/media/l2JhtKtDWYNKdRpoA/giphy.gif" alt="sorry gif" class="sorry-gif" />
+        <img src="https://media.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif" alt="sorry gif" class="sorry-gif" />
+      </div>
+      <div class="lock-icon">🔐</div>
+      <h1 class="lock-title">For My <span class="highlight">Babuu</span> 💕</h1>
+      <p class="lock-subtitle">This little space was made just for you,<br/>with all my heart & love 🌙</p>
+      <div class="input-wrapper">
+        <input type="password" id="pwdInput" placeholder="Enter our secret code..." maxlength="10" />
+        <div class="input-sparkle">✨</div>
+      </div>
+      <button id="enterBtn" onclick="checkPassword()">Enter with Love 💖</button>
+      <p id="pwdError" class="error-msg"></p>
+      <div class="pwd-hint-box">
+        <p class="hint-text">Enter the secret code below 🗓️</p>
+        <p class="hint-code">1 4 2 0 0 6</p>
+        <p class="hint-subtext">💕 type it and press Enter 💕</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN CONTENT SCREEN ==================== -->
+  <div id="mainScreen" class="screen">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="petal-rain" id="petalRain"></div>
+      <div class="hero-content">
+        <div class="hero-badge">💌 A Message From My Heart</div>
+        <h1 class="hero-title">I'm So <span class="sorry-text">Sorry</span>,<br/>My <span class="highlight">Babuu</span> 🌹</h1>
+        <p class="hero-sub">You are my world, my moon, my every shooting star.<br/>And I hate seeing you upset because of me.</p>
+        <div class="scroll-hint">✨ Scroll to feel my love ✨</div>
+      </div>
+    </section>
+
+    <!-- SORRY MESSAGES SECTION -->
+    <section class="sorry-section">
+      <h2 class="section-title">💬 Things I Want You To Know</h2>
+      <div class="sorry-cards">
+
+        <div class="sorry-card" style="--delay:0s">
+          <div class="card-icon">🌸</div>
+          <h3>I'm Sorry for Hurting You</h3>
+          <p>I never ever wanted to make you feel sad or upset. You mean everything to me and seeing you in pain breaks my heart into a million pieces. I am truly, deeply sorry babuu.</p>
+        </div>
+
+        <div class="sorry-card" style="--delay:0.15s">
+          <div class="card-icon">🥺</div>
+          <h3>I Was Wrong</h3>
+          <p>I know I made a mistake. I should have been more careful with my words, more gentle with your feelings. You deserve nothing but the best and I failed you. I'm sorry, jaan.</p>
+        </div>
+
+        <div class="sorry-card" style="--delay:0.3s">
+          <div class="card-icon">💝</div>
+          <h3>You Are My Everything</h3>
+          <p>Without you, my world feels empty and dark. You are the reason I smile every morning, the reason my heart beats with joy. Losing your happiness is the worst feeling in the world for me.</p>
+        </div>
+
+        <div class="sorry-card" style="--delay:0.45s">
+          <div class="card-icon">🌙</div>
+          <h3>I Promise To Do Better</h3>
+          <p>From today, I promise to be more understanding, more patient, and more loving. You deserve someone who cherishes every part of you, and I want to be that person, always and forever.</p>
+        </div>
+
+        <div class="sorry-card" style="--delay:0.6s">
+          <div class="card-icon">✨</div>
+          <h3>Your Smile is My World</h3>
+          <p>The thing I love most in this entire universe is your beautiful smile. Please smile again, babuu. My heart aches every second it stays away. Come back to me?</p>
+        </div>
+
+        <div class="sorry-card" style="--delay:0.75s">
+          <div class="card-icon">🫂</div>
+          <h3>I Need You</h3>
+          <p>I need your laugh, your voice, your warmth, your everything. Without you I am incomplete. Please forgive me and let me hold you again. I love you so so so much.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- REASONS I LOVE YOU -->
+    <section class="love-section">
+      <h2 class="section-title">💕 Why I Love You So Much</h2>
+      <div class="love-list">
+        <div class="love-item" style="--i:1"><span class="love-num">01</span><p>Your laughter that lights up the whole room ✨</p></div>
+        <div class="love-item" style="--i:2"><span class="love-num">02</span><p>The way you care for everyone around you 🌸</p></div>
+        <div class="love-item" style="--i:3"><span class="love-num">03</span><p>Your adorable pout when you're gussa 🥺</p></div>
+        <div class="love-item" style="--i:4"><span class="love-num">04</span><p>The warmth I feel whenever you're near me 🔥</p></div>
+        <div class="love-item" style="--i:5"><span class="love-num">05</span><p>Your beautiful eyes that hold my whole universe 🌌</p></div>
+        <div class="love-item" style="--i:6"><span class="love-num">06</span><p>The way you say my name, so softly 💞</p></div>
+        <div class="love-item" style="--i:7"><span class="love-num">07</span><p>Your strength that inspires me every single day 💪</p></div>
+        <div class="love-item" style="--i:8"><span class="love-num">08</span><p>Every little habit of yours that I've fallen in love with 🍃</p></div>
+        <div class="love-item" style="--i:9"><span class="love-num">09</span><p>The dreams we share and the future I imagine with you 🌅</p></div>
+        <div class="love-item" style="--i:10"><span class="love-num">10</span><p>Simply YOU — every atom, every breath, every smile 💖</p></div>
+      </div>
+    </section>
+
+    <!-- PHOTO GALLERY -->
+    <section class="gallery-section">
+      <h2 class="section-title">📸 Our Beautiful Moments</h2>
+      <p class="gallery-subtitle">Every photo tells a story of us 💕</p>
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- Photos will be injected by JS -->
+        <div class="photo-placeholder"><span>📷</span><p>Our Memory</p></div>
+        <div class="photo-placeholder"><span>📷</span><p>Our Memory</p></div>
+        <div class="photo-placeholder"><span>📷</span><p>Our Memory</p></div>
+        <div class="photo-placeholder"><span>📷</span><p>Our Memory</p></div>
+        <div class="photo-placeholder"><span>📷</span><p>Our Memory</p></div>
+        <div class="photo-placeholder"><span>📷</span><p>Our Memory</p></div>
+      </div>
+    </section>
+
+    <!-- FINAL LOVE LETTER -->
+    <section class="letter-section">
+      <div class="letter-card">
+        <div class="letter-header">
+          <span>💌</span>
+          <h2>My Last Letter to Your Heart</h2>
+          <span>💌</span>
+        </div>
+        <div class="letter-body">
+          <p class="letter-salutation">My dearest Babuu,</p>
+          <p>
+            I know I hurt you, and I know saying sorry might not fix everything right away — but please know that every word I write here comes from the deepest corner of my heart.
+          </p>
+          <p>
+            You are not just my girlfriend. You are my home. The place where I feel safe, loved, and complete. When you're upset, my whole world feels off balance. And I hate knowing that <em>I</em> was the reason for your pain.
+          </p>
+          <p>
+            You deserve someone who makes you feel like the most special person alive every single day — and I want to be that person. I will try harder. I will do better. I promise.
+          </p>
+          <p>
+            Please forgive me, babuu. Your gussa breaks my heart. Come back to me with that beautiful smile of yours, and I promise I'll spend every day making it worth it.
+          </p>
+          <p class="letter-closing">
+            Forever and always yours,<br/>
+            <span class="highlight">Your Babuu 🌙💕</span>
+          </p>
+        </div>
+        <div class="letter-footer">
+          <button class="forgive-btn" id="forgiveBtn" onclick="onForgive()">I Forgive You 💖</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORGIVENESS SCREEN -->
+    <div class="forgive-overlay" id="forgiveOverlay">
+      <div class="forgive-content">
+        <div class="forgive-emoji">🥰</div>
+        <h2>Thank You, Babuu! 🌸</h2>
+        <p>You just made me the happiest person alive.<br/>I love you more than all the stars in the sky!</p>
+        <div class="forgive-hearts" id="forgiveHearts"></div>
+      </div>
+    </div>
+
+  </div><!-- end mainScreen -->
+
+  <script src="script.js"></script>
+</body>
+</html>
